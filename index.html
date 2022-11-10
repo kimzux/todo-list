@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet"href="../assets/css/index.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="container">
+        <section class="sidebar">
+            <div class="subsection">
+                <image src="/assets/images/logo-3.png" class="logo" alternative="example" />
+                <span class="user">Manager Sammy</span>
+            </div>
+            <div class="subsection">
+                <a class="active" href="#dashboard">
+                    <i class="fa-solid fa-house-chimney"></i>
+                    <span class="side-link"> Dashboard</span></a>
+            </div>
+            <div class="subsection">
+                <a href="#calendar">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <span class="side-link"> Calendar</span></a>
+            </div>
+            <div class="subsection">
+                <a href="#activity">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span class="side-link"> Activity</span></a>
+            </div>
+
+            <div class="subsection">
+                <a href="#messages">
+                    <i class="fa-regular fa-comments"></i>
+                    <span class="side-link"> Messages</span></a>
+            </div>
+
+            <div class="subsection">
+                <a href="#projectplan">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span class="side-link"> Project Plan</span></a>
+            </div>
+
+            <div class="subsection">
+                <a href="#settings">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="side-link"> Settings</span></a>
+            </div>
+            <div class="subsection">
+                <a class="logout" href="#logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="side-link"> log Out</span>
+                </a>
+            </div>
+        </section>
+        <section id="dashboard">
+            <div class="dashboard-subsection">
+                <span class="dash-title"> Dashboard</span>
+                <div class="overlay hidden"></div>
+                <button id="myBtn" class="myBtn"><i class="fa-solid fa-plus"></i><span class="add-task">Add
+                        Todo</span></button>
+                <div class="bell"><i class="fa-regular fa-bell"></i></div>
+                <div class="user-image">
+                    <image src="/assets/images/miss.png" class="img" alternative="example" />
+                </div>
+                <section class="modal hidden">
+                    <div class="flex">
+                        <image src="/assets/images/miss.png" class="img" width="50px" height="50px"
+                            alternative="example" />
+                        <button class="btn-close">⨉</button>
+                    </div>
+                    <div>
+                        <h3>hello Sammy </h3>
+                        <span class="salutation"> please Enter your Todo list</span>
+
+                    </div>
+                    <form id="todoform">
+                        <input type="text" placeholder="Enter Todo" id="newtodo" />
+                        <input type="text" placeholder="Enter Todo type" id="newtodotype" />
+                        <input type="date" placeholder="Enter Todo type" />
+                        <button class="btn">Submit</button>
+                    </form>
+
+                </section>
+            </div>
+
+            <div class="card-section">
+                <div class="card-task">
+                    <div class="task-icon">
+                        <i class="fas fa-tasks"></i>
+                        <span class="task-number">12 Tasks</span><br>
+                        <span class="task-status">completed</span>
+                        <span class="task-percent"> 100%</span>
+                    </div>
+                </div>
+                <div class="card-task-2">
+                    <div class="task-icon">
+                        <i class="fas fa-tasks"></i>
+                        <span class="task-number">4 Tasks</span><br>
+                        <span class="task-status">in Progress</span>
+                        <span class="task-percent"> 50%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-card">
+                <div class="title"><span>Overview</span>
+                    <div class="dot-point">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+
+                </div>
+                <canvas id="myChart" style="width:100%;max-width:600px;margin-top:30px;margin-left:10px;"></canvas>
+            </div>
+
+
+            <div class="task-content">
+                <div class="task-day">
+                    <span class="task-detail">Todays Task</span>
+                    <div class="dot-point-task">
+                        <div class="dot-point-list"></div>
+                        <div class="dot-point-list"></div>
+                        <div class="dot-point-list"></div>
+                    </div>
+                </div>
+                <div class="task-list">
+
+                    <!-- <div class="task-1">
+                        <i class="fas fa-sticky-note"></i>
+                        <span class="task-number">Meuzi Mobile App Redesign</span><br>
+                        <span class="task-status" style="font-size: 10px;">product design</span>
+                        <i class="bi bi-circle"></i>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <div class="action">
+                            <div class="action1"></div>
+                            <div class="action1"></div>
+                            <div class="action1"></div>
+                            <ul class="menu">
+                                <li><i class="fa-regular fa-pen-to-square"></i> <span style="color:#ffffff">edit</span> </li>
+                                <li><i class="fa-solid fa-trash"></i> <span  style="color:#ffffff">delete</span></li>
+                            </ul>
+                        </div> 
+                    </div>
+                    <hr />
+                    <div class="task-2">
+                        <i class="fas fa-sticky-note"></i>
+                        <span id="check" class="task-number-2">Meuzi Mobile App Redesign</span><br>
+                        <span class="task-status" style="font-size: 10px;">product design</span>
+                        <i class="bi bi-circle"></i>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <div class="action">
+                            <div class="action1"></div>
+                            <div class="action1"></div>
+                            <div class="action1"></div>
+                            <ul class="menu">
+                                <li><i class="fa-regular fa-pen-to-square"></i> <span style="color:#ffffff">edit</span> </li>
+                                <li><i class="fa-solid fa-trash"></i> <span  style="color:#ffffff">delete</span></li>
+                            </ul>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </section>
+        <section class="last-dashboard-section">
+            <div class="calendar">
+                <span class="month">November</span>
+                <div class="next">
+                    <i class="fa-sharp fa-solid fa-angle-left"></i>
+                    <i class="fa-sharp fa-solid fa-angle-right"></i>
+                </div>
+                <div class="days-date">
+                    <div class="weekday">
+                        <ul class="weekdays">
+                            <li>M</li>
+                            <li>T</li>
+                            <li>W</li>
+                            <li>T</li>
+                            <li>F</li>
+                            <li>S</li>
+                            <li>S</li>
+                        </ul>
+                    </div>
+
+                    <ul class="days">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                        <li><span class="active">10</span></li>
+                        <li><span class="lessactive">11</span></li>
+                        <li><span class="lessactive">12</span></li>
+                        <li><span class="lessactive">13</span></li>
+                        <li><span class="lessactive">14</span></li>
+
+                    </ul>
+                </div>
+                <div class="notification">
+                    <div class="card-notification">
+                        <div class="notification-content">
+                            <i class="fa-solid fa-spinner"></i>
+                            <span class="not-available">Mindu LandingPage Redesign</span>
+                            <span class="notification-status">Web Development</span>
+                            <div class="class-name"></div>
+                        </div>
+                        <div class="notification-content">
+                            <i class="fa-solid fa-video"></i>
+                            <span class="not-available1">Video shoot from LFC project</span>
+                            <span class="notification-status1">Graphics a animations</span>
+                            <div class="class-name"></div>
+                        </div>
+                        <div class="notification-content">
+                            <i class="fa-solid fa-gears"></i>
+                            <span class="not-available2">Website Mantainance</span>
+                            <span class="notification-status2">design and codding</span>
+                            <div class="class-name"></div>
+                        </div>
+                        <div class="notification-content">
+                            <i class="fa-sharp fa-solid fa-lock"></i>
+                            <span class="not-available3">Firewall Installation</span>
+                            <span class="notification-status3">security update</span>
+                           
+                        </div>
+                    </div>
+                   
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+    
+    <script src="/assets/js/main.js"></script>
+
+    <script src="/assets/js/todo.js"></script>
+</body>
+
+</html>
