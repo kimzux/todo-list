@@ -94,7 +94,7 @@ function renderTodo(){
          <div class="action1"></div>
          <div class="action1"></div>
          <ul class="menu">
-             <li onclick='editTodo(${index}, "${todo.value}","${todo.valuetype}" )'><i class="fa-regular fa-pen-to-square" data-action="edit" ></i> <span style="color:#ffffff" class="myBtn">edit</span> </li>
+             <li onclick='editTodo(${index}, "${todo.value}","${todo.valuetype}")'  title="to edit just click on add todo button after click here"><i class="fa-regular fa-pen-to-square" data-action="edit" ></i> <span style="color:#ffffff" class="myBtn">edit</span> </li>
              <li onclick='deleteTask(${index}, "${todo}")' ><i class="fa-solid fa-trash" data-action="delete"></i> <span  style="color:#ffffff">delete</span></li>
          </ul>
      </div>
