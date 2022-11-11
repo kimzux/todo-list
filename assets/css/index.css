@@ -27,7 +27,7 @@
 }
 
 body {
-  background: var(--dark);
+  background: var(--grey);
   position: relative;
 }
 
@@ -35,17 +35,18 @@ body {
   background: var(--grey);
   max-width: 95vw;
   height: inherit;
-  margin: 100px;
+  margin: 0px;
   border-radius: 35px;
   display: flex;
   overflow-wrap: anywhere;
 }
 .sidebar {
+  position: fixed;
   background: var(--light);
   min-width: 18vw;
-  height: inherit;
+  height: 100%;
   border-radius: 35px;
-  margin: 20px;
+  margin-right: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -93,6 +94,7 @@ a {
 }
 #dashboard {
   display: flex;
+  margin-left:300px;
   flex-direction: column;
 }
 .dashboard-subsection {
